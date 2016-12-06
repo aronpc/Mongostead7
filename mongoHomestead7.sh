@@ -11,7 +11,7 @@ echo "Updating the packages list";
 sudo apt-get update;
 
 echo "Install the latest version of MongoDb";
-sudo apt-get install -y mongodb-org;
+sudo apt-get install -y mongodb-org mongodb-org-shell mongodb-org-server;
 
 echo "Fixing the pecl errors list";
 sudo sed -i -e 's/-C -n -q/-C -q/g' `which pecl`;
