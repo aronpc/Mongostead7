@@ -27,7 +27,7 @@ echo "Installing PHP7 mongoDb extension";
 sudo phpenmod mongodb;
 
 echo "Add mongodb.service file"
-cat >/etc/systemd/system/mongodb.service <<EOL
+cat >/tmp/mongodb-server <<EOL
 [Unit]
 Description=High-performance, schema-free document-oriented database
 After=network.target
@@ -39,6 +39,8 @@ ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
 [Install]
 WantedBy=multi-user.target
 EOL
+
+sudo cp /tmp/mongodb-server /etc/systemd/system/mongodb.service
 
 sudo systemctl start mongodb
 sudo systemctl status mongodb
