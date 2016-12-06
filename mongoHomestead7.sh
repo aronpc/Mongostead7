@@ -20,6 +20,8 @@ echo "Installing OpenSSl Libraries";
 sudo apt-get install -y autoconf g++ make openssl libssl-dev libcurl4-openssl-dev;
 sudo apt-get install -y libcurl4-openssl-dev pkg-config;
 sudo apt-get install -y libsasl2-dev;
+sudo apt-get install -y libmongodb-perl;
+sudo apt-get install -y php-mongodb;
 
 echo "Installing PHP7 mongoDb extension";
 sudo pecl install mongodb;
