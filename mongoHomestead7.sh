@@ -24,11 +24,7 @@ sudo apt-get install -y libmongodb-perl;
 sudo apt-get install -y php-mongodb;
 
 echo "Installing PHP7 mongoDb extension";
-sudo pecl install mongodb;
-
-echo "adding the extension to your php.ini file";
-sudo echo  "extension = mongodb.so" >> /etc/php/7.0/cli/php.ini;
-sudo echo  "extension = mongodb.so" >> /etc/php/7.0/fpm/php.ini;
+sudo phpenmod mongodb;
 
 echo "Add mongodb.service file"
 cat >/etc/systemd/system/mongodb.service <<EOL
